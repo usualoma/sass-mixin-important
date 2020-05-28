@@ -1,0 +1,9 @@
+@import "../important.scss";
+
+@include important(color-red-important) {
+  color: red;
+}
+
+.color-blue {
+  color: blue;
+}

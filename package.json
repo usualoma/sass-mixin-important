@@ -1,0 +1,17 @@
+{
+  "name": "sass-mixin-important",
+  "version": "1.0.0",
+  "description": "Repeat the class name instead of an \"!important\" statement.",
+  "main": "",
+  "scripts": {
+    "build": "rimraf ./docs/dist && mkdirp ./docs/dist && sass docs/index.scss docs/dist/index.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.5"
+  }
+}

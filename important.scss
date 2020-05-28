@@ -1,0 +1,29 @@
+$important-repeat-count: 100 !default;
+
+/*
+ * Repeated occurrences of the same simple selector are allowed and do increase specificity.
+ * https://www.w3.org/TR/selectors-3/#specificity
+ */
+@mixin important($class, $repeat-count: $important-repeat-count, $count: 0) {
+  @if ($count > $repeat-count - 1) {
+    @content;
+  } @else if (str-index($class, "&") == 1) {
+    #{$class} {
+      @include important($class, $repeat-count, $count + 1) {
+        @content;
+      }
+    }
+  } @else if ($count == 0) {
+    .#{$class} {
+      @include important($class, $repeat-count, $count + 1) {
+        @content;
+      }
+    }
+  } @else {
+    &.#{$class} {
+      @include important($class, $repeat-count, $count + 1) {
+        @content;
+      }
+    }
+  }
+}
