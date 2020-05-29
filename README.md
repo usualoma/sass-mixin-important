@@ -1,3 +1,9 @@
+## Installation
+
+```bash
+$ npm install sass-mixin-important
+```
+
 ## Example
 
 ### Input
